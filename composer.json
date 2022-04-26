@@ -1,0 +1,16 @@
+{
+    "name": "leoralph/query-builder",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "LeoRalph\\QueryBuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leonardo Ralph",
+            "email": "theleoralph@gmail.com"
+        }
+    ],
+    "require": {}
+}
