@@ -14,7 +14,6 @@ class QueryBuilder
     private array $order = [];
     private string $limit;
     private array $params = [];
-    private array $query = [];
 
     public function __construct(string $table)
     {
@@ -199,11 +198,10 @@ class QueryBuilder
             $query .= " {$this->limit}";
         }
 
-        $retorno['query'] = $query;
-
-        if (!empty($this->params)) {
-            $retorno['params'] = $this->params;
-        }
+        $retorno = [
+            'query' => $query,
+            'params' => $this->params
+        ];
 
         if (substr_count($query, '?') != count($this->params)) {
             throw new QueryBuilderException("INVALID NUMBER OF QUERY PARAMETERS PASSED");
@@ -216,4 +214,5 @@ class QueryBuilder
     {
         return $this->build();
     }
+
 }
